@@ -31,7 +31,6 @@ public class MybatisConfig {
 		datasource.setUrl("jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai");
 		datasource.setUsername("fk");
 		datasource.setPassword("123456");
-		
 		return datasource;
 	}
 	
