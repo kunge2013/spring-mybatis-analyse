@@ -24,6 +24,7 @@ public class MybatisConfig {
 	  return factoryBean.getObject();
 	}
 
+	@Bean
 	private DataSource dataSource() {
 		SimpleDriverDataSource datasource = new SimpleDriverDataSource();
 		datasource.setDriverClass(com.mysql.cj.jdbc.Driver.class);
