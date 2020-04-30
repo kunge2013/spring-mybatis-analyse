@@ -28,7 +28,7 @@ public class MybatisConfig {
 	private DataSource dataSource() {
 		SimpleDriverDataSource datasource = new SimpleDriverDataSource();
 		datasource.setDriverClass(com.mysql.jdbc.Driver.class);
-		datasource.setUrl("jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong");
+		datasource.setUrl("jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai");
 		datasource.setUsername("fk");
 		datasource.setPassword("123456");
 		
