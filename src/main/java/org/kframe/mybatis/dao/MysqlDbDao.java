@@ -9,7 +9,6 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface MysqlDbDao {
 
-	
 	@Select("select host, user from db")
 	public List<Map<String,Object>> list();
 	
