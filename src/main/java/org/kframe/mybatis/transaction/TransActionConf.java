@@ -23,5 +23,4 @@ public class TransActionConf {
 		return txManager;
 	}
 	
-	
 }

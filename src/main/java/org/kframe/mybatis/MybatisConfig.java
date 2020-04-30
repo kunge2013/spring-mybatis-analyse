@@ -16,16 +16,15 @@ import org.springframework.stereotype.Component;
 @MapperScan(basePackages = {"org.kframe.mybatis.dao"})
 public class MybatisConfig {
 
-	
 	@Bean
-	public SqlSessionFactory sqlSessionFactory() throws Exception {
+	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
 	  SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
-	  factoryBean.setDataSource(dataSource());
+	  factoryBean.setDataSource(dataSource);
 	  return factoryBean.getObject();
 	}
 
 	@Bean
-	private DataSource dataSource() {
+	public DataSource dataSource() {
 		SimpleDriverDataSource datasource = new SimpleDriverDataSource();
 		datasource.setDriverClass(com.mysql.cj.jdbc.Driver.class);
 		datasource.setUrl("jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai");
