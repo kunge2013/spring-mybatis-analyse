@@ -1,6 +1,6 @@
 package org.kframe.mybatis;
 
-import org.kframe.mybatis.service.MysqlService;
+import org.kframe.mybatis.service.IMysqlService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MybatisApp {
@@ -9,7 +9,7 @@ public class MybatisApp {
 	public static void main(String[] args) throws Exception {
 		System.out.println("=======================begin  AnnotationConfigApplicationContext=======================================");
 		context = new AnnotationConfigApplicationContext("org.kframe.mybatis");
-		MysqlService service = context.getBean(MysqlService.class);
+		IMysqlService service = context.getBean(IMysqlService.class);
 		System.out.println(service.list());
 	}
 }
