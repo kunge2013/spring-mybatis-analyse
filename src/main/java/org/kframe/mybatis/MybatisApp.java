@@ -1,8 +1,9 @@
 package org.kframe.mybatis;
 
-import org.kframe.mybatis.entity.UserDetail;
-import org.kframe.mybatis.service.IMysqlService;
+import org.kframe.mybatis.dao.UserdetailDao;
 import org.kframe.mybatis.service.IUserdetailService;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MybatisApp {
@@ -11,6 +12,10 @@ public class MybatisApp {
 	public static void main(String[] args) throws Exception {
 		System.out.println("=======================begin  AnnotationConfigApplicationContext=======================================");
 		context = new AnnotationConfigApplicationContext("org.kframe.mybatis");
+		AutowireCapableBeanFactory factory = context.getAutowireCapableBeanFactory();
+		
+		factory.autowire(MybatisConfig.class, AutowireCapableBeanFactory.AUTOWIRE_NO, false);
+		
 //		IMysqlService service = context.getBean(IMysqlService.class);
 		IUserdetailService service = context.getBean(IUserdetailService.class);
 		System.out.println(service.query());
