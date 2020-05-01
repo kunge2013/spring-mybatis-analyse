@@ -2,7 +2,6 @@ package org.kframe.mybatis.transaction;
 
 import javax.sql.DataSource;
 
-import org.aspectj.lang.annotation.AdviceName;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
