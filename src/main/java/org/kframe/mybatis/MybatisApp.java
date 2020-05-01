@@ -1,5 +1,6 @@
 package org.kframe.mybatis;
 
+import org.kframe.mybatis.entity.UserDetail;
 import org.kframe.mybatis.service.IMysqlService;
 import org.kframe.mybatis.service.IUserdetailService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -13,6 +14,6 @@ public class MybatisApp {
 //		IMysqlService service = context.getBean(IMysqlService.class);
 		IUserdetailService service = context.getBean(IUserdetailService.class);
 		System.out.println(service.query());
-		System.out.println(service.delete(1));
+//		System.out.println(service.save(new UserDetail("12045789658")));
 	}
 }
