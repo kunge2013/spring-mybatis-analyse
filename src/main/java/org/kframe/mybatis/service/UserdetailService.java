@@ -19,8 +19,6 @@ public class UserdetailService implements IUserdetailService {
 	@Override
 	public Object query() {
 		// TODO Auto-generated method stub
-		save(new UserDetail("111111"));
-		int i = 1/0;
 		return dao.query();
 	}
 
@@ -34,7 +32,6 @@ public class UserdetailService implements IUserdetailService {
 	@Override
 	public int save(UserDetail detail) {
 		// TODO Auto-generated method stub
-		
 		return dao.save(detail);
 	}
 	
