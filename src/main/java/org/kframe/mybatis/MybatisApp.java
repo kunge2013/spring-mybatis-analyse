@@ -1,9 +1,7 @@
 package org.kframe.mybatis;
 
-import org.kframe.mybatis.dao.UserdetailDao;
-import org.kframe.mybatis.service.IUserdetailService;
+import org.kframe.mybatis.service.IMysqlService;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
-import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MybatisApp {
@@ -14,11 +12,11 @@ public class MybatisApp {
 		context = new AnnotationConfigApplicationContext("org.kframe.mybatis");
 		AutowireCapableBeanFactory factory = context.getAutowireCapableBeanFactory();
 		
-		factory.autowire(MybatisConfig.class, AutowireCapableBeanFactory.AUTOWIRE_NO, false);
+		factory.autowire(MybatisConfig.class, AutowireCapableBeanFactory.AUTOWIRE_BY_TYPE, false);
 		
-//		IMysqlService service = context.getBean(IMysqlService.class);
-		IUserdetailService service = context.getBean(IUserdetailService.class);
-		System.out.println(service.query());
+		IMysqlService service = context.getBean(IMysqlService.class);
+//		IUserdetailService service = context.getBean(IUserdetailService.class);
+		System.out.println(service.list());
 //		System.out.println(service.save(new UserDetail("12045789658")));
 	}
 }
